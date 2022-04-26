@@ -1,7 +1,7 @@
 const db = require('../utils/db.json');
 
 const searchBar = (req, res) => {
-    const filteredCats = Object.values(db.cats).filter(cat => cat.breed.includes('ora'));
+    const filteredCats = Object.values(db.cats).filter(cat => cat.breed.includes(req.query.search.toLowerCase()));
 
     res.render('home/index', { cats: filteredCats, homepage: true })
 }
