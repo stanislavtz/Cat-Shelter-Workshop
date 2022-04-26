@@ -1,17 +1,9 @@
 const router = require('express').Router();
-const db = require('../utils/db.json');
 
-router.get('/add-breed', addBreed);
-router.get('/add-cat', addCat);
+const catController = require('../controllers/catController');
+const breedController = require('../controllers/breedController');
 
-function addBreed(req, res) {
-    res.render('addBreed');
-}
-
-function addCat
-(req, res) {
-    const breeds = db.breeds;
-    res.render('addCat', { breeds });
-}
+router.get('/add-cat', catController);
+router.get('/add-breed', breedController);
 
 module.exports = router;
