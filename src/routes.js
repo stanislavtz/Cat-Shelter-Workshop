@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const db = require('./utils/db.json');
 
-const cats = Object.values(db.cats);
-router.get('/', (req, res) => res.render('home/index', { cats }));
-router.get('/add-breed', (req, res) => res.render('addBreed'));
-router.get('/add-cat', (req, res) => res.render('addCat'));
+const catsRouter = require('./routers/catsRouter');
+const homePage = require('./controllers/homeController');
+
+router.get('/', homePage);
+router.use('/cats', catsRouter);
 
 module.exports = router;
