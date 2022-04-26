@@ -1,3 +1,3 @@
-const breedController = (req, res) => res.render('addBreed');
+const addBreed = (req, res) => res.render('addBreed');
 
-module.exports = breedController;
+module.exports = addBreed;
