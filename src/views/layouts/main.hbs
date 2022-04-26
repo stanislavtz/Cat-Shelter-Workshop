@@ -22,10 +22,7 @@
         </nav>
         <h1>Cat Shelter</h1>
         {{#if homepage}}
-        <form action="/search">
-            <input type="text">
-            <button type="button">Search</button>
-        </form>
+            {{> searchBar}}
         {{/if}}
     </header>
 
