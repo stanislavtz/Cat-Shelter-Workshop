@@ -1,0 +1,15 @@
+{
+    "cats": {
+        "asd345sdf": {
+            "_id": "asd345sdf",
+            "breed": "angora",
+            "description": "Little cute kitty cat",
+            "imageUrl": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
+        }
+    },
+    "breeds": [
+        "angora",
+        "persian",
+        "tiger"
+    ]
+}
