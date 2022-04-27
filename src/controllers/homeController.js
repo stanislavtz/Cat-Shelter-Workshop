@@ -1,12 +1,14 @@
-const db = require('../utils/db.json');
+const { getAllCats, getSearchedCats } = require('../services/catsService');
 
-const cats = Object.values(db.cats);
-
-function homePage(req, res) {
-    // req.locals.cats = { ...db.cats }
-    console.log(req.locals.cats);
-
-    res.render('home/index', { cats: req.cats, homepage: true });
+function renderHomePage(req, res) {
+    res.render('home/index', { cats: getAllCats(), homepage: true });
 }
 
-module.exports = homePage;
+function showSearchedCats(req, res) {
+    res.render('home/index', { cats: getSearchedCats(req.query.search), homepage: true });
+}
+
+module.exports = {
+    renderHomePage,
+    showSearchedCats
+}

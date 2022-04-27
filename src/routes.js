@@ -2,11 +2,10 @@ const router = require('express').Router();
 
 const catsRouter = require('./routers/catsRouter');
 
-const homePage = require('./controllers/homeController');
-const searchBar = require('./controllers/searchController');
+const {renderHomePage, showSearchedCats} = require('./controllers/homeController');
 
-router.get('/', homePage);
-router.get('/search', searchBar);
+router.get('/', renderHomePage);
+router.get('/search', showSearchedCats);
 
 router.use('/cats', catsRouter);
 
