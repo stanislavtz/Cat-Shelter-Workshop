@@ -4,6 +4,7 @@ const uniqid = require('uniqid');
 
 const addCat = require('../controllers/catController');
 const addBreed = require('../controllers/breedController');
+const Breed = require('../models/Breed');
 
 router.get('/add-cat', addCat);
 router.get('/add-breed', addBreed);
@@ -18,8 +19,8 @@ router.post('/add-cat', (req, res) => {
 });
 
 router.post('/add-breed', (req, res) => {
-    const breed = req.body.breed;
-    db.breeds.push(breed);
+    const breed = new Breed(req.body.breed);
+    Breed.save(breed);
     res.redirect('/');
 });
 
