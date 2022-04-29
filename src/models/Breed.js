@@ -3,7 +3,7 @@ class Breed {
         this.name = name;
     }
 
-    static collection = [
+    static #collection = [
         { name: 'Angora' },
         { name: 'Persian' },
         { name: 'Tiger' },
@@ -11,10 +11,10 @@ class Breed {
 
     static save = (breedName) => {
         const breed = new Breed(breedName);
-        this.collection.push(breed);
+        Breed.#collection.push(breed);
     }
 
-    static getAll = () => this.collection.slice();
+    static getAll = () => Breed.#collection.slice();
 }
 
 module.exports = Breed;
