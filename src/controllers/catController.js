@@ -1,9 +1,7 @@
-const Breed = require("../models/Breed");
+const router = require('express').Router();
+const { renderAddCatPage, addCat } = require('../services/catsService');
 
-const addCat = (req, res) => {
-    const breeds = Breed.getAll();
-    console.log(breeds)
-    res.render('addCat', { breeds });
-}
+router.get('/add-cat', renderAddCatPage);
+router.post('/add-cat', addCat);
 
-module.exports = addCat;
+module.exports = router;
