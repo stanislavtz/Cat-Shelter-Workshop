@@ -10,6 +10,6 @@ const addBreed = (req, res) => {
 }
 
 module.exports = {
+    addBreed,
     renderAddBreedPage,
-    addBreed
 }
