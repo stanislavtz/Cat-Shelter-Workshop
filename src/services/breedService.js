@@ -4,9 +4,8 @@ const renderAddBreedPage = (req, res) => res.render('addBreed');
 
 const addBreed = (req, res) => {
     const breedName = req.body.breed;
-    const breed = new Breed(breedName);
 
-    Breed.save(breed);
+    Breed.save(breedName);
     res.redirect('/');
 }
 
