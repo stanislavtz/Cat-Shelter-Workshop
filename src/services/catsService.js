@@ -1,19 +1,22 @@
+const uniqId = require('uniqid');
+const Breed = require("../models/Breed");
 const Cat = require("../models/Cat");
 
-function getAllCats() {
-    return Cat.getAll();
+
+const renderAddCatPage = (req, res) => {
+    const breeds = Breed.getAll();
+    res.render('addCat', { breeds });
 }
 
-function getSearchedCats(criteria) {
-    return Cat.getSearched(criteria);
-}
-
-function getCatById(id) {
-    return Cat.getById(id);
+const addCat = (req, res) => {
+    const id = uniqId();
+    const { name, breed, description, imageUrl } = req.body;
+    const cat = new Cat(id, name, breed, description, imageUrl);
+    Cat.save(cat);
+    res.redirect('/');
 }
 
 module.exports = {
-    getAllCats,
-    getSearchedCats,
-    getCatById
+    renderAddCatPage,
+    addCat,
 }
