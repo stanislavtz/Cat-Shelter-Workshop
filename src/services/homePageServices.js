@@ -1,9 +1,24 @@
 const Cat = require('../models/Cat');
 
-const getAllCats = () => Cat.getAll();
-const getSearchedResult = (criteria) => Cat.getSearched(criteria);
+const renderHomePage = (req, res) => {
+    const data = {
+        homepage: true,
+        cats: Cat.getAll()
+    }
+
+    res.render('home/index', data)
+}
+
+const showSearchedCats = (req, res) => {
+    const data = {
+        homepage: true, 
+        cats: Cat.getSearched(req.query.search)
+    }
+
+    res.render('home/index', data)
+}
 
 module.exports = {
-    getAllCats,
-    getSearchedResult
+    renderHomePage,
+    showSearchedCats
 }
