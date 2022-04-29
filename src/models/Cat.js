@@ -34,6 +34,10 @@ class Cat {
     static getSearched = (criteria) => Object.values({ ...Cat.collection }).filter(cat => cat.breed.includes(criteria));
 
     static getById = (id) => Cat.collection[id];
+
+    static updateById = (id, data) => Cat.collection[id] = data;
+
+    static removeById = (id) => delete Cat.collection[id];
 }
 
 module.exports = Cat;
