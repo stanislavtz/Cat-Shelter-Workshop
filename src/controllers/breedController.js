@@ -1,3 +1,7 @@
-const addBreed = (req, res) => res.render('addBreed');
+const router = require('express').Router();
+const {renderAddBreedPage, addBreed} = require('../services/breedService');
 
-module.exports = addBreed;
+router.get('/add-breed', renderAddBreedPage);
+router.post('/add-breed', addBreed);
+
+module.exports = router;
