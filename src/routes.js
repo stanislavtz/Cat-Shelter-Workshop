@@ -5,7 +5,6 @@ const catController = require('./controllers/catController');
 
 router.use(homePageController);
 router.use(breedController);
-// router.use(catController);
-
+router.use(catController);
 
 module.exports = router;
