@@ -8,6 +8,14 @@ const renderAddCatPage = (req, res) => {
     res.render('addCat', { breeds });
 }
 
+const renderEditCatPage = (req, res) => {
+    console.log(req.params)
+    const cat = Cat.getById(req.params._id);
+    const breeds = Breed.getAll().filter(b => b.name !== cat.breed);
+    
+    res.render('editCat', {cat, breeds});
+}
+
 const addCat = (req, res) => {
     const id = uniqId();
     const { name, breed, description, imageUrl } = req.body;
@@ -16,7 +24,12 @@ const addCat = (req, res) => {
     res.redirect('/');
 }
 
+const editCat = (req, res) => {
+    console.log(req.params)
+}
+
 module.exports = {
-    renderAddCatPage,
     addCat,
+    renderAddCatPage,
+    renderEditCatPage,
 }
