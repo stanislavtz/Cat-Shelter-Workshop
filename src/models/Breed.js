@@ -4,13 +4,16 @@ class Breed {
     }
 
     static collection = [
-       {name:  'Angora'},
-        {name: 'Persian'},
-        {name: 'Tiger'},
+        { name: 'Angora' },
+        { name: 'Persian' },
+        { name: 'Tiger' },
     ];
 
-    static save = (breed) => this.collection.push(breed);
-    
+    static save = (breedName) => {
+        const breed = new Breed(breedName);
+        this.collection.push(breed);
+    }
+
     static getAll = () => this.collection.slice();
 }
 

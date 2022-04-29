@@ -24,11 +24,14 @@ class Cat {
         }
     }
 
-    static save = (cat) => Cat.collection[cat._id] = cat;
-    
-    static getAll = () => Object.values({...Cat.collection});
+    static save = (id, name, breed, description, imageUrl) => {
+        const cat = new Cat(id, name, breed, description, imageUrl);
+        Cat.collection[cat._id] = cat;
+    }
 
-    static getSearched = (criteria) => Object.values({...Cat.collection}).filter(cat => cat.breed.includes(criteria));
+    static getAll = () => Object.values({ ...Cat.collection });
+
+    static getSearched = (criteria) => Object.values({ ...Cat.collection }).filter(cat => cat.breed.includes(criteria));
 
     static getById = (id) => Cat.collection[id];
 }
