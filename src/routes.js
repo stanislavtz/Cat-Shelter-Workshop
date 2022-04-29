@@ -1,12 +1,11 @@
 const router = require('express').Router();
+const homePageController = require('./controllers/homePageController');
+const breedController = require('./controllers/breedController');
+const catController = require('./controllers/catController');
 
-const catsRouter = require('./routers/catsRouter');
+router.use(homePageController);
+router.use(breedController);
+// router.use(catController);
 
-const {renderHomePage, showSearchedCats} = require('./controllers/homeController');
-
-router.get('/', renderHomePage);
-router.get('/search', showSearchedCats);
-
-router.use('/cats', catsRouter);
 
 module.exports = router;
