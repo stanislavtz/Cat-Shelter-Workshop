@@ -25,8 +25,7 @@ const addCat = (req, res) => {
 }
 
 const editCat = (req, res) => {
-    console.log(cat);
-    console.log(req.body);
+    Cat.updateById(req.params.id, req.body)
     res.redirect('/');
 }
 
