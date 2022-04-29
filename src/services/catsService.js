@@ -11,8 +11,8 @@ const renderAddCatPage = (req, res) => {
 const addCat = (req, res) => {
     const id = uniqId();
     const { name, breed, description, imageUrl } = req.body;
-    const cat = new Cat(id, name, breed, description, imageUrl);
-    Cat.save(cat);
+    
+    Cat.save(id, name, breed, description, imageUrl);
     res.redirect('/');
 }
 
