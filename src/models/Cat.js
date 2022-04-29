@@ -7,7 +7,7 @@ class Cat {
         this.imageUrl = imageUrl;
     }
 
-    static collection = {
+    static #collection = {
         asd345sdf: {
             _id: 'asd345sdf',
             name: 'Test1',
@@ -26,18 +26,18 @@ class Cat {
 
     static save = (id, name, breed, description, imageUrl) => {
         const cat = new Cat(id, name, breed, description, imageUrl);
-        Cat.collection[cat._id] = cat;
+        Cat.#collection[cat._id] = cat;
     }
 
-    static getAll = () => Object.values({ ...Cat.collection });
+    static getAll = () => Object.values({ ...Cat.#collection });
 
-    static getSearched = (criteria) => Object.values({ ...Cat.collection }).filter(cat => cat.breed.includes(criteria));
+    static getSearched = (criteria) => Object.values({ ...Cat.#collection }).filter(cat => cat.breed.includes(criteria));
 
-    static getById = (id) => Cat.collection[id];
+    static getById = (id) => Cat.#collection[id];
 
-    static updateById = (id, data) => Cat.collection[id] = data;
+    static updateById = (id, data) => Cat.#collection[id] = { ...data, _id: id };
 
-    static removeById = (id) => delete Cat.collection[id];
+    static removeById = (id) => delete Cat.#collection[id];
 }
 
 module.exports = Cat;
