@@ -1,3 +1,5 @@
+const { cats } = require('../utils/constants');
+
 class Cat {
     constructor(_id, name, breed, description, imageUrl) {
         this._id = _id;
@@ -7,22 +9,7 @@ class Cat {
         this.imageUrl = imageUrl;
     }
 
-    static #collection = {
-        asd345sdf: {
-            _id: 'asd345sdf',
-            name: 'Test1',
-            breed: 'Angora',
-            description: 'Little cute kitty cat',
-            imageUrl: 'https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg'
-        },
-        asd575sda: {
-            _id: 'asd575sda',
-            name: 'Test2',
-            breed: 'Persian',
-            description: 'Little cute kitty cat, but little bit too angry',
-            imageUrl: 'https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg'
-        }
-    }
+    static #collection = cats;
 
     static save = (id, name, breed, description, imageUrl) => {
         const cat = new Cat(id, name, breed, description, imageUrl);
