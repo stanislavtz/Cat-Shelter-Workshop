@@ -26,4 +26,4 @@ Fill in new cat data, click "ADD CAT" to confirm a new cat creation.
 On single cat card, click "Change Info" button to render cat info form.
 Change information in forms and click "EDIT CAT" button to save changed cat data. 
 
-On single cat card, click "New Home" button when new home is fount and remove cat from Shelter list.
+On single cat card, click "New Home" button when new home is fount and remove cat from cats list.
