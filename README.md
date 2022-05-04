@@ -4,10 +4,10 @@
 
 ### Used modules:
 - Node.js
-- Expraess
+- Express
 - Express-Handlebars
 
-When started, don't forget to write in terminal npm install to download and intall required dependencies.
+When started, don't forget to write in terminal npm install to download and install required dependencies.
 Write in terminal "npm start" - to start script.
 
 To render app home page in browser do to "http://localhost:8000".
@@ -26,4 +26,4 @@ Fill in new cat data, click "ADD CAT" to confirm a new cat creation.
 On single cat card, click "Change Info" button to render cat info form.
 Change information in forms and click "EDIT CAT" button to save changed cat data. 
 
-On single cat card, click "New Home" button when new home is fount and remove cat from Sheltter list.
+On single cat card, click "New Home" button when new home is fount and remove cat from Shelter list.
