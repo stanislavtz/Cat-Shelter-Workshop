@@ -1,13 +1,11 @@
+const { breeds } = require("../utils/constants");
+
 class Breed {
     constructor(name) {
         this.name = name;
     }
 
-    static #collection = [
-        { name: 'Angora' },
-        { name: 'Persian' },
-        { name: 'Tiger' },
-    ];
+    static #collection = breeds;
 
     static save = (breedName) => {
         const breed = new Breed(breedName);
