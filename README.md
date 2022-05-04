@@ -1,6 +1,6 @@
 # Cat-Shelter-Workshop
 
-## Demo project from SoftUni education module: JavaScript Front-End app development.
+### Demo project from SoftUni education module: JavaScript Front-End app development.
 
 ### Used modules:
 - Node.js
